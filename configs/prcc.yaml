@@ -1,0 +1,14 @@
+DATA:
+  DATASET: 'prcc'
+  TRAIN_BATCH: 64
+  NUM_INSTANCES: 8
+MODEL:
+  NAME: resnet50
+LOSS:
+  CLA_LOSS: crossentropylabelsmooth
+  CAL: cal
+TRAIN:
+  OPTIMIZER:
+    LR: 0.00000035
+TAG: res50-clip-combiner-prcc
+

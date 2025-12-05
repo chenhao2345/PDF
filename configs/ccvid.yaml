@@ -1,0 +1,19 @@
+DATA:
+  DATASET: 'ccvid'
+  HEIGHT: 384
+  WIDTH: 128
+  TRAIN_BATCH: 16
+  NUM_INSTANCES: 4
+MODEL:
+  NAME: resnet50
+LOSS:
+  CLA_LOSS: crossentropylabelsmooth
+  CAL: cal
+TRAIN:
+  OPTIMIZER:
+    LR: 0.000001
+  MAX_EPOCH: 60
+AUG:
+  SEQ_LEN: 8
+#    LR: 0.00035
+TAG: res50-clip-combiner-ccvid

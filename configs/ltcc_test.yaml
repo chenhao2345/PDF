@@ -1,0 +1,13 @@
+DATA:
+  DATASET: 'ltcc'
+  TRAIN_BATCH: 1
+  TEST_BATCH: 128
+MODEL:
+  NAME: resnet50
+LOSS:
+  CLA_LOSS: crossentropylabelsmooth
+  CAL: cal
+TRAIN:
+  OPTIMIZER:
+    LR: 0.0000035
+TAG: res50-clip-combiner-ltcc
