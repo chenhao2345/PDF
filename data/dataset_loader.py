@@ -130,8 +130,8 @@ class ImageDatasetClipPRCCTrain(Dataset):
         self.transform = transform
         # self.tokenizer = SimpleTokenizer()
         # with open(base_path / 'data' / 'prcc' / 'caption' / f'cap.train.json') as f:
-        with open(base_path / 'data' / 'prcc' / 'caption' / f'cap_qwen7B.train.self.json') as f:
-        # with open(base_path / 'data' / 'captions' / f'prcc.json') as f:
+        # with open(base_path / 'data' / 'prcc' / 'caption' / f'cap_qwen7B.train.self.json') as f:
+        with open(base_path / 'data' / 'captions' / f'prcc.json') as f:
             self.cap_train = json.load(f)
         #
         # with open(base_path / 'data' / 'captions' / f'prcc.pkl', "rb") as f:
@@ -223,8 +223,8 @@ class ImageDatasetClipLTCC(Dataset):
         self.transform = transform
         # with open(base_path / 'data' / 'LTCC_ReID' / 'caption' / f'cap.train.json') as f:
         # with open(base_path / 'data' / 'LTCC_ReID' / 'caption' / f'cap_qwen7B_total.train.json') as f:
-        with open(base_path / 'data' / 'LTCC_ReID' / 'caption' / f'cap_qwen7B.train.self.json') as f:
-        # with open(base_path / 'data' / 'captions' / f'ltcc.json') as f:
+        # with open(base_path / 'data' / 'LTCC_ReID' / 'caption' / f'cap_qwen7B.train.self.json') as f:
+        with open(base_path / 'data' / 'captions' / f'ltcc.json') as f:
             self.cap_train = json.load(f)
         # with open(base_path / 'data' / 'captions' / f'ltcc.pkl', "rb") as f:
         #     self.cap_train = pickle.load(f)
