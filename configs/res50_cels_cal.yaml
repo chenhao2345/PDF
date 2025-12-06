@@ -1,6 +1,0 @@
-MODEL:
-  NAME: resnet50
-LOSS:
-  CLA_LOSS: crossentropylabelsmooth
-  CAL: cal
-TAG: res50-cels-cal
