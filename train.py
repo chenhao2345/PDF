@@ -87,7 +87,7 @@ def train_clip_combiner(config, epoch, clip_model, criterion_cla, criterion_pair
         imgs, pids, clothes_ids, pos_mask = imgs.cuda(), pids.cuda(), clothes_ids.cuda(), pos_mask.float().cuda()
         text_inputs = tokenize(cap, tokenizer, context_length=77, truncate=True).cuda()
         with torch.cuda.amp.autocast():
-            [cls_score, cls_score_proj], [img_feature, img_feature_proj], [com_proj, com_z, t_bn, t_z_bn] = clip_model(reference_images, text_inputs, text_inputs_noise)
+            [cls_score, cls_score_proj], [img_feature, img_feature_proj], [com_proj, com_z, t_bn, t_z_bn] = clip_model(reference_images, text_inputs)
             reference_features_proj = img_feature_proj
             cla_loss = criterion_cla(cls_score_proj, pids)
             rn1 = random.gauss(0.5, 0.5)
@@ -116,3 +116,4 @@ def train_clip_combiner(config, epoch, clip_model, criterion_cla, criterion_pair
             epoch + 1, batch_time=batch_time, data_time=data_time,
             cla_loss=batch_cla_loss, pair_loss=batch_pair_loss,
             mlm_loss=batch_opl_loss))
+
