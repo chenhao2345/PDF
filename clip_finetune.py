@@ -18,7 +18,6 @@ import torch.nn.functional as F
 from configs.default_img import get_img_config
 from configs.default_vid import get_vid_config
 from data import build_dataloader
-from models import build_model
 from losses import build_losses
 from tools.utils import save_checkpoint, set_seed, get_logger
 from tools.lr_scheduler import WarmupMultiStepLR
@@ -246,5 +245,6 @@ if __name__ == '__main__':
             os.mkdir(model_folder)
         else:
             logger.info("=> model folder already exists")
+
 
     main(config, model_folder)
